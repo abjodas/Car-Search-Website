@@ -3,7 +3,7 @@ import {useState} from 'react'
 import Image from "next/image"
 import { carProps } from '@/types'
 import { CarDetails, CustomButton } from '@/components'
-import { calculateCarRent } from '@/utils'
+import { calculateCarRent, getImageUrl } from '@/utils'
 
 interface CarCardProps {
     car: carProps
@@ -43,12 +43,13 @@ const CarCard = ({car}: CarCardProps) => {
         </p>
 
         <div className="relative w-full h-40 my-3 object-contain">
-            <Image 
+            {/* <Image 
                 src="/hero.png"
                 alt="Car Model"
                 fill priority
                 className="object-contain"
-            />
+            /> */}
+            <img src={`${getImageUrl(make, model, "main")}`} className="w-full h-full object-contain" />
         </div>
 
         <div className="relative flex w-full mt-2">
