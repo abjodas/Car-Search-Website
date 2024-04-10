@@ -3,8 +3,16 @@ import CustomFilter from "@/components/CustomFilter";
 import { fetchCars } from "@/utils";
 import Image from "next/image";
 
+interface FilterProps {
+  manufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
+}
 
-export default async function Home({searchParams}) {
+
+export default async function Home({searchParams}: {searchParams: FilterProps}) {
   const allCars = await fetchCars({manufacturer: searchParams.manufacturer || "",
     year: searchParams.year  || "2022",
     fuel: searchParams.fuel || "",

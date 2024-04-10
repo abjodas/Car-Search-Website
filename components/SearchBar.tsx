@@ -5,6 +5,7 @@ import SearchManufacturer  from "./SearchManufacturer"
 import React, { useState } from "react"
 import {useRouter} from "next/navigation"
 
+
 const SearchBar = () => {
     const [manufacturer, setManufacturer] = useState("");
     const [model, setModel] = useState("");
