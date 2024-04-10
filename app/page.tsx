@@ -14,7 +14,7 @@ interface FilterProps {
 
 export default async function Home({searchParams}: {searchParams: FilterProps}) {
   const allCars = await fetchCars({manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year  || "2022",
+    year: searchParams.year  || 2022,
     fuel: searchParams.fuel || "",
     limit:searchParams.limit || 100,
     model: searchParams.model || ""});
